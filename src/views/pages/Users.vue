@@ -164,7 +164,6 @@ const updateDataUsers = (params) => {
 
 const confirm = (data) => {
     const callback = (res) => {
-        console.log(res.data);
         if (res?.data?.meta?.status) {
             toast?.success('Berhasil Menghapus Pengguna');
             const data = res?.data?.data;
