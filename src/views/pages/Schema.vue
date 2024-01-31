@@ -118,7 +118,6 @@ const confirm = (data) => {
 };
 
 const submit = (data) => {
-    console.log(data.map(curr => curr?.value));
     const forms = data?.map(curr => curr?.value);
     const params = {
         code: forms[0],

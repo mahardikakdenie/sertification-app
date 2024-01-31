@@ -73,8 +73,13 @@ const __wrapper = {
         },
         updateData(data, type = 'users') {
             const updateActions = {
-                users: () => {
-                    // 
+                users: (index,data) => {
+                    this.datas[index].name = data?.name
+                    this.datas[index].email = data?.email
+                    this.datas[index].schema_name = data?.schema_name;
+                    this.datas[index].gender = data?.gender;
+                    this.datas[index].address = data?.address;
+                    this.datas[index].phone_number = data?.phone_number;
                 },
                 schema: (index, data) => {
                     this.datas[index].code = data?.code;

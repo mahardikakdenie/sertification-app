@@ -1,4 +1,3 @@
-import adminDashboard from '@/router/admin-dashboard/index'
 const routes = [
   {
     path: "/",
