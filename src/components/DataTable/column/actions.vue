@@ -1,13 +1,11 @@
 <template>
 	<div>
-		<template v-for="(action, index) in actions">
+		<template v-for="(action, index) in actions" :key="index">
 			<vue-button
-				:key="index"
 				:icon="action.icon"
 				:icon-tooltip="action.tooltipText"
 				:btn-class="action.btnClass"
 				@click="handleClick(action)"
-				v-if="conditionToMeet(action)" 
             />
 		</template>
 	</div>
@@ -15,7 +13,7 @@
 
 <script setup>
 import VueButton from '@/components/Button';
-import { useDataTableStore } from '@/store/Table';
+import { useTableStore } from '@/store/Table';
 import { computed } from 'vue';
 
 const props = defineProps({
@@ -26,7 +24,7 @@ const props = defineProps({
 });
 
 // Using the data-table store
-const store = useDataTableStore();
+const store = useTableStore();
 
 // Getting the actions from the store as a computed property
 const actions = computed(() => store.actions);
