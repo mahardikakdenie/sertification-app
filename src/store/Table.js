@@ -71,32 +71,15 @@ const __wrapper = {
         trigerAction(actions) {
             this.actionResponse = actions;
         },
-        updateData(data, type = 'users') {
-            const updateActions = {
-                users: (index,data) => {
-                    this.datas[index].name = data?.name
-                    this.datas[index].email = data?.email
-                    this.datas[index].schema_name = data?.schema_name;
-                    this.datas[index].gender = data?.gender;
-                    this.datas[index].address = data?.address;
-                    this.datas[index].phone_number = data?.phone_number;
-                },
-                schema: (index, data) => {
-                    this.datas[index].code = data?.code;
-                    this.datas[index].name = data?.name;
-                    this.datas[index].type = data?.type;
-                    this.datas[index].count = data?.count;
-                },
-            };
-
-            if (!this.datas || !data || !data.id || !updateActions[type]) {
-                return;
-            }
-        
-            const index = this.datas.findIndex(curr => curr?.id === data.id);
-            console.log(index);
+        updateUsers(user) {
+            const index = this.datas?.findIndex(curr => curr?.id === curr?.id);
             if (index !== -1) {
-                updateActions[type](index, data);
+                this.datas[index].name = user?.name;
+                this.datas[index].email = user?.email;
+                this.datas[index].schema_name = user?.schema_name;
+                this.datas[index].gender = user?.gender;
+                this.datas[index].address = user?.address;
+                this.datas[index].phone_number = user?.phone_number;
             }
         },
         updateSchema(data) {

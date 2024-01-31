@@ -66,7 +66,6 @@ const schema = ref();
 const isModalConfirmVisible = ref(false);
 const textConfirm = ref();
 watch(() => store?.actionResponse, (value) => {
-    console.log("🚀 ~ watch ~ value?.key:", value?.key)
     if (value?.key === 'update') {
         isModalFormVisible.value = true;
         schema.value = value?.data;
@@ -99,7 +98,6 @@ const openModalCreate = () => {
 };
 
 const confirm = (data) => {
-    console.log(data.id);
     const callback = (res) => {
         console.log(res.data);
         if (res?.data?.meta?.status) {

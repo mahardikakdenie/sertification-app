@@ -166,6 +166,11 @@ const initData = () => {
 	if (props?.isEdit) {
 		const formKey = forms.value.map((curr) => curr?.field);
 
+        forms.value[2].value = {
+            label: props?.data.schema_name,
+            id: props?.data.schema_id,
+        }
+
 		formKey.forEach((key, index) => {
 			if (key && props?.data?.hasOwnProperty(key)) {
 				forms.value[index].value = props.data[key];
