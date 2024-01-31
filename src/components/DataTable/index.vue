@@ -13,9 +13,9 @@
 			</div>
 
 			<vue-good-table
-				:columns="columns"
+				:columns="headers"
 				styleClass="vgt-table bordered centered"
-				:rows="advancedTable"
+				:rows="datas"
 				:pagination-options="{
 					enabled: true,
 					perPage: perpage,
@@ -127,6 +127,8 @@ import InputGroup from '@/components/InputGroup';
 import Pagination from '@/components/Pagination';
 import { MenuItem } from '@headlessui/vue';
 import { advancedTable } from '@/constant/basic-tablle-data';
+import { useTableStore } from '@/store/Table';
+import { computed } from 'vue';
 const actions = [
 	{
 		name: 'view',
@@ -155,43 +157,6 @@ const options = [
 		label: '5',
 	},
 ];
-const columns = [
-	{
-		label: 'Id',
-		field: 'id',
-	},
-	{
-		label: 'Order',
-		field: 'order',
-	},
-	{
-		label: 'Customer',
-		field: 'customer',
-	},
-	{
-		label: 'Date',
-		field: 'date',
-	},
-
-	{
-		label: 'Quantity',
-		field: 'quantity',
-	},
-
-	{
-		label: 'Amount',
-		field: 'amount',
-	},
-
-	{
-		label: 'Status',
-		field: 'status',
-	},
-	{
-		label: 'Action',
-		field: 'action',
-	},
-];
 export default {
 	components: {
 		Pagination,
@@ -218,8 +183,19 @@ export default {
 			searchTerm: '',
 			actions,
 			options,
-			columns,
 		};
+	},
+
+	setup() {
+		const store = useTableStore();
+
+		const headers = computed(() => store?.headers);
+		const datas = computed(() => store?.datas);
+
+		return {
+			headers,
+			datas,
+		}
 	},
 };
 </script>

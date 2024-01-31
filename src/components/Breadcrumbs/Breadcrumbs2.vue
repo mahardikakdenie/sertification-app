@@ -13,7 +13,7 @@
     </h4>
     <ul class="breadcrumbs" v-if="this.$route.meta.groupParent">
       <li class="text-primary-500">
-        <router-link :to="{ nam: 'home' }" class="text-lg">
+        <router-link to="/" class="text-lg">
           <Icon icon="heroicons-outline:home" />
         </router-link>
         <span class="breadcrumbs-icon rtl:transform rtl:rotate-180">

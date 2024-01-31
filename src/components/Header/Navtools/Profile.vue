@@ -15,7 +15,7 @@
       >
         <span
           class="overflow-hidden text-ellipsis whitespace-nowrap w-[85px] block"
-          >Albert Flores</span
+          >Mahardika Kessuma Denie</span
         >
         <span class="text-base inline-block ltr:ml-[10px] rtl:mr-[10px]"
           ><Icon icon="heroicons-outline:chevron-down"></Icon

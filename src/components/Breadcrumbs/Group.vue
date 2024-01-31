@@ -1,7 +1,7 @@
 <template>
 <ul class="breadcrumbs">
     <li class="text-primary-500">
-        <router-link :to="{ name: 'home' }" class="text-lg">
+        <router-link to="/" class="text-lg">
             <Icon :icon="icon" />
         </router-link>
         <span class="breadcrumbs-icon rtl:transform rtl:rotate-180">

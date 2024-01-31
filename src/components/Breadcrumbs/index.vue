@@ -18,7 +18,7 @@
 			:sectionName="sectionName"
 		/>
 	</div>
-	<date-picker-section />
+	<!-- <date-picker-section /> -->
 </div>
 </template>
 <script>

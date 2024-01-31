@@ -9,7 +9,7 @@ export const menuItems = [
     title: "Admin Dashboard",
   },
   {
-    title: "Dashboard",
+    title: "Home",
     icon: "heroicons-outline:home",
     isOpen: true,
     child: [
@@ -204,31 +204,14 @@ export const topMenu = [
     title: "menu",
   },
   {
-    title: "Dashboard",
+    title: "List Schema",
     icon: "heroicons-outline:home",
-    link: "home",
-    child: [
-      {
-        childtitle: "Calendar",
-        childlink: "calender",
-        childicon: "heroicons-outline:calendar",
-      },
-      {
-        childtitle: "Kanban",
-        childlink: "kanban",
-        childicon: "heroicons-outline:view-boards",
-      },
-      {
-        childtitle: "Todo",
-        childlink: "todo",
-        childicon: "heroicons-outline:clipboard-check",
-      },
-      {
-        childtitle: "Projects",
-        childlink: "projects",
-        childicon: "heroicons-outline:document",
-      },
-    ],
+    link: "/",
+  },
+  {
+    title: "List Users",
+    icon: "clarity:users-line",
+    link: "/users",
   },
 ];
 

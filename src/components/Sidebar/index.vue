@@ -11,7 +11,7 @@
 				`"
       >
         <router-link
-          :to="{ name: 'home' }"
+          to="/"
           v-if="isSidebarOpenOrMouseHovered"
         >
           <img
@@ -33,7 +33,7 @@
           />
         </router-link>
         <router-link
-          :to="{ name: 'home' }"
+          to="/"
           v-if="isSidebarCollapsedAndNotHovered"
         >
           <img

@@ -12,9 +12,12 @@
       "
     >
       <router-link :to="item.link" v-if="!item.child && !item.megamenu">
-        <div class="flex flex-1 items-center space-x-[6px] rtl:space-x-reverse">
+        <div 
+          class="flex flex-1 items-center space-x-[6px] rtl:space-x-reverse" 
+          :class="{'text-primary-500': item.link === $route.path}"
+        >
           <span class="icon-box" v-if="item.icon">
-            <Icon :icon="item.icon" />
+            <Icon :icon="item.icon" :class="{'text-primary-500': item.link === $route.path}"  />
           </span>
           <div class="text-box" v-if="item.title">{{ item.title }}</div>
         </div>

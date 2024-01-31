@@ -1,17 +1,21 @@
 import adminDashboard from '@/router/admin-dashboard/index'
 const routes = [
   {
-    path: "/admin",
+    path: "/",
     name: "Layout",
-    redirect: "/admin/home",
+    redirect: "/",
     component: () => import("@/Layout/index.vue"),
     children: [
-      ...adminDashboard,
       {
-        path: "/calender",
-        name: "calender",
-        component: () => import("@/views/index.vue"),
+        name: 'ListSchema',
+        path: '/',
+        component: () => import('@/views/pages/Schema.vue'),
       },
+      {
+        name: 'ListUsers',
+        path: '/users',
+        component: () => import('@/views/pages/Users.vue'),
+      }
     ],
   },
 ];
