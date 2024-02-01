@@ -4,7 +4,7 @@
       <div class="flex-1 ltr:mr-[10px] rtl:ml-[10px]">
         <div class="lg:h-8 lg:w-8 h-7 w-7 rounded-full">
           <img
-            :src= "profileImg"
+            :src= "userDummyImage ?? profileImg"
             alt=""
             class="block w-full h-full object-cover rounded-full"
           />
@@ -46,6 +46,9 @@
   </Dropdown>
 </template>
 <script>
+const userDummyImage =
+			'https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg';
+
 import { MenuItem } from "@headlessui/vue";
 import Dropdown from "@/components/Dropdown";
 import Icon from "@/components/Icon";
@@ -58,6 +61,7 @@ export default {
   },
   data() {
     return {
+      userDummyImage,
       profileImg,
       ProfileMenu: [
         {

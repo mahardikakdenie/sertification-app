@@ -3,13 +3,13 @@
     <Header :class="window.width > 1280 ? switchHeaderClass() : ''" />
     <!-- end header -->
 
-    <Sidebar
+    <!-- <Sidebar
       v-if="
         this.$store.themeSettingsStore.menuLayout === 'vertical' &&
         this.$store.themeSettingsStore.sidebarHidden === false &&
         window.width > 1280
       "
-    />
+    /> -->
     <!-- main sidebar end -->
     <Transition name="mobilemenu">
       <mobile-sidebar
@@ -92,6 +92,9 @@ export default {
         return "ltr:ml-[248px] rtl:mr-[248px]";
       }
     },
+  },
+  mounted() {
+    this.$store.themeSettingsStore.menuLayout = 'horizontal';
   },
 };
 </script>
